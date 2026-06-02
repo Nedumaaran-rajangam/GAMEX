@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { 
-  Cpu, Wind, CircuitBoard, MemoryStick, Monitor, HardDrive, Zap, Box, 
-  CheckCircle, AlertTriangle, Save, Share2, Trash2, Plus, Info, 
+import {
+  Cpu, Wind, CircuitBoard, MemoryStick, Monitor, HardDrive, Zap, Box,
+  CheckCircle, AlertTriangle, Save, Share2, Trash2, Plus, Info,
   ShieldCheck, RefreshCcw, Truck, Headphones, ChevronDown, ChevronRight, Wrench, ArrowLeft
 } from 'lucide-react';
 import { Button } from '../components/ui/Button';
@@ -13,7 +13,7 @@ const ComponentRow = ({ category, icon: Icon, component, onChange }) => (
       <Icon size={24} />
       <span className="text-[10px] font-bold tracking-wider uppercase text-center">{category}</span>
     </div>
-    
+
     {component ? (
       <>
         <div className="w-14 h-14 bg-secondary rounded-lg flex items-center justify-center p-2 shrink-0">
@@ -56,7 +56,7 @@ export const PCBuilderPage = ({ onBack }) => {
 
   const handleClear = () => {
     setBuild({
-      cpu: null, cooler: null, motherboard: null, ram: null, 
+      cpu: null, cooler: null, motherboard: null, ram: null,
       gpu: null, storage: null, psu: null, case: null
     });
   };
@@ -69,7 +69,7 @@ export const PCBuilderPage = ({ onBack }) => {
 
   return (
     <div className="flex flex-col gap-6 animate-in fade-in duration-500 pb-12 max-w-[1600px] mx-auto w-full">
-      
+
       {/* Header */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 border-b border-border pb-6">
         <div>
@@ -98,11 +98,11 @@ export const PCBuilderPage = ({ onBack }) => {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-        
+
         {/* Left Column (Select Components - Span 4) */}
         <div className="lg:col-span-4 flex flex-col gap-4">
           <h3 className="font-bold text-sm tracking-wide mb-2 uppercase">1. SELECT COMPONENTS</h3>
-          
+
           <ComponentRow category="CPU" icon={Cpu} component={build.cpu} />
           <ComponentRow category="CPU Cooler" icon={Wind} component={build.cooler} />
           <ComponentRow category="Motherboard" icon={CircuitBoard} component={build.motherboard} />
@@ -125,8 +125,8 @@ export const PCBuilderPage = ({ onBack }) => {
 
           {/* PC Image Container */}
           <div className="bg-white rounded-2xl border border-border shadow-sm p-8 flex flex-col items-center justify-center min-h-[450px]">
-             {/* Note: In a real app we'd map parts to visuals. Mocking the beautiful PC case here */}
-            <img src={`${import.meta.env.BASE_URL}images/PC building page.png`} alt="PC Build" className="w-full h-full object-contain mix-blend-multiply opacity-0" style={{display: 'none'}} />
+            {/* Note: In a real app we'd map parts to visuals. Mocking the beautiful PC case here */}
+            <img src={`${import.meta.env.BASE_URL}images/PC building page.png`} alt="PC Build" className="w-full h-full object-contain mix-blend-multiply opacity-0" style={{ display: 'none' }} />
             <div className="relative w-full aspect-square max-w-[400px]">
               <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/20 via-transparent to-blue-500/20 rounded-xl"></div>
               <img src={`${import.meta.env.BASE_URL}images/pc_builder_1779654793386.png`} alt="PC Preview" className="w-full h-full object-cover rounded-xl shadow-2xl" />
@@ -189,7 +189,7 @@ export const PCBuilderPage = ({ onBack }) => {
         {/* Right Column (Summary & Performance - Span 3) */}
         <div className="lg:col-span-3 flex flex-col gap-6">
           <h3 className="font-bold text-sm tracking-wide uppercase">4. BUILD SUMMARY</h3>
-          
+
           <div className="bg-white rounded-2xl border border-border shadow-sm p-6 flex flex-col gap-4">
             <div className="flex justify-between items-center text-sm">
               <span className="text-text-secondary font-medium">Total Price (8 Items)</span>
@@ -224,7 +224,7 @@ export const PCBuilderPage = ({ onBack }) => {
           <div className="bg-white rounded-2xl border border-border shadow-sm flex flex-col overflow-hidden">
             <div className="flex border-b border-border">
               {['1080p', '1440p', '4K'].map(res => (
-                <button 
+                <button
                   key={res}
                   onClick={() => setPerfTab(res)}
                   className={`flex-1 py-3 text-xs font-bold border-b-2 transition-colors ${perfTab === res ? 'border-accent text-accent' : 'border-transparent text-text-secondary hover:bg-secondary'}`}
@@ -233,7 +233,7 @@ export const PCBuilderPage = ({ onBack }) => {
                 </button>
               ))}
             </div>
-            
+
             <div className="flex flex-col p-4 gap-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
